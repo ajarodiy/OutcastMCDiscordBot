@@ -12,6 +12,9 @@ import net.dv8tion.jda.api.requests.GatewayIntent;
 import net.dv8tion.jda.api.utils.ChunkingFilter;
 import net.dv8tion.jda.api.utils.MemberCachePolicy;
 
+import java.util.Timer;
+import java.util.TimerTask;
+
 public class Bot {
     public static void main(String args[]) throws Exception {
         JDA jda = JDABuilder.createDefault("NzgyMDIzMjAzNjk3ODUyNDU2.X8GJ3Q.jIAYlPw_OpNOwTaKcj1CzFtatMw")
@@ -23,5 +26,17 @@ public class Bot {
                 .addEventListeners(new CommandListener()).addEventListeners(new InviteTracking())
                 .addEventListeners(new PrivateMessage()).addEventListeners(new PrivateReact())
                 .build().awaitReady();
+
+
+
+        new Timer().schedule(new TimerTask() {
+            private int index=0;
+            @Override
+            public void run() {
+                if (index==0) jda.getPresence().setActivity(Activity.watching("store.outcastmc.org"));
+                else jda.getPresence().setActivity(Activity.playing("play.outcastmc.org"));
+                index ^= 1;
+            }
+        }, 10000, 10000);
     }
 }

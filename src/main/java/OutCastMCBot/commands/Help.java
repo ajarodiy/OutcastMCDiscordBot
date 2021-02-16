@@ -27,7 +27,7 @@ public class Help implements CommandInterface {
         if (args.isEmpty()) {
             embed.setColor(Constants.ticketcolor).setTitle("<:OutcastMC:782035842293039124> OutcastMC Commands")
                     .setFooter("!help {command}",Constants.iconurl);
-            embed.addField("Members", "`close`, `invites`, `leaderboard`, `suggest`, `apply`", false)
+            embed.addField("Members", "`close`, `invites`, `leaderboard`, `suggest`, `apply`, `bug`", false)
                     .addField("Administration", "`report`, `add`, `announce`, `ticketmessage`, `bonus`, `reset`, `claim`, `whoinvited`, `membercount`, `lock`", false);
             e.getChannel().sendMessage(embed.build()).queue();
         }else{

@@ -42,8 +42,9 @@ public class MessageReact extends ListenerAdapter {
                 if (m.getEmbeds().get(0).getTitle()!=null && m.getEmbeds().get(0).getTitle().contains("Ticket")) {
                     String title = m.getEmbeds().get(0).getTitle();
                     String name = title.substring(0, title.indexOf("Ticket")-3);
-
+                    String staffName = e.getUser().getName();
                     m.delete().queue();
+                    m.getChannel().sendMessage(String.format("%s's ticket has been claimed by %s", name, staffName)).queue();
 
                     Category category = e.getGuild().getCategoryById(Constants.ticketcategoryid);
                     for (TextChannel c : category.getTextChannels()) {

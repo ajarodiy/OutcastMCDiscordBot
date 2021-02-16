@@ -4,6 +4,7 @@ import OutCastMCBot.Constants;
 import OutCastMCBot.applications.ApplicationConfirmation;
 import OutCastMCBot.applications.ApplicationMap;
 import OutCastMCBot.applications.ApplicationQuestionConfirmation;
+import OutCastMCBot.bugs.BugConfirmation;
 import OutCastMCBot.suggestions.SuggestionConfirmation;
 import OutCastMCBot.tickets.TicketCreate;
 import net.dv8tion.jda.api.events.message.priv.react.PrivateMessageReactionAddEvent;
@@ -19,7 +20,16 @@ public class PrivateReact extends ListenerAdapter {
                 // Suggestions
                 if (m.getEmbeds().get(0).getTitle().equals("Confirm Suggestion")) {
                     SuggestionConfirmation.run(m, e);
+                    return;
                 }
+
+                // Bug Report
+                if (m.getEmbeds().get(0).getTitle().equals("Confirm Bug Report")) {
+                    BugConfirmation.run(m, e);
+                    return;
+                }
+
+
                 // Application
                 try {
                     String title = m.getEmbeds().get(0).getTitle();

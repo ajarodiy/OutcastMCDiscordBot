@@ -1,6 +1,7 @@
 package OutCastMCBot;
 
 import OutCastMCBot.applications.*;
+import OutCastMCBot.bugs.BugCommand;
 import OutCastMCBot.commands.*;
 import OutCastMCBot.invites.*;
 import OutCastMCBot.tickets.*;
@@ -31,6 +32,7 @@ public class CommandManager {
         addCommand(new ApplyCommand());
         addCommand(new LockCommand());
         addCommand(new TicketAddCommand());
+        addCommand(new BugCommand());
     }
 
     private void addCommand(CommandInterface c) {

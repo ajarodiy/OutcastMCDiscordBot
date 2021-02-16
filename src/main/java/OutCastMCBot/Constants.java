@@ -36,6 +36,7 @@ public class Constants {
     public static String roleOutcastTeamID = "722586284610158613";
     public static String roleStaffApplicationsID = "722875027132776542";
     public static String applicationCategoryID = "805291617493188609";
+    public static String bugsChannelID = "782640014243921970";
     public static String applicationInfo = "Welcome to the OutcastMC staff applications!\n" +
             "\n" +
             "Please use as much detail as possible when completing the form content. Correct grammar, spelling, and punctuation will increase your chances of getting accepted for an interview. If you are not contacted back within 1-2 weeks, your application will have been rejected and you may re-apply 4 weeks after the date of your first submission. \n" +

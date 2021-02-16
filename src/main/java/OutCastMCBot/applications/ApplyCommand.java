@@ -2,6 +2,7 @@ package OutCastMCBot.applications;
 
 import OutCastMCBot.CommandInterface;
 import OutCastMCBot.Constants;
+import OutCastMCBot.bugs.BugList;
 import OutCastMCBot.suggestions.SuggestionList;
 import net.dv8tion.jda.api.EmbedBuilder;
 import net.dv8tion.jda.api.entities.User;
@@ -33,6 +34,7 @@ public class ApplyCommand implements CommandInterface {
             ApplicationMap.getMap().removeAll(user);
             ApplicationMap.getMap().put(user, "temporary");
             SuggestionList.getList().remove(user);
+            BugList.getList().remove(user);
         });
     }
 
