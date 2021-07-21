@@ -17,7 +17,7 @@ import java.util.TimerTask;
 
 public class Bot {
     public static void main(String args[]) throws Exception {
-        JDA jda = JDABuilder.createDefault("NzgyMDIzMjAzNjk3ODUyNDU2.X8GJ3Q.jIAYlPw_OpNOwTaKcj1CzFtatMw")
+        JDA jda = JDABuilder.createDefault("token")
                 .setChunkingFilter(ChunkingFilter.ALL)
                 .setMemberCachePolicy(MemberCachePolicy.ALL)
                 .enableIntents(GatewayIntent.GUILD_MEMBERS)
